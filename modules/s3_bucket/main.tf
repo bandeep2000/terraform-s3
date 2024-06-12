@@ -1,4 +1,4 @@
-resource "aws_s3_bucket" "example" {
+resource "aws_s3_bucket" "bucket" {
   bucket = var.s3_bucket_name 
   #acl    = "private"
 
@@ -13,7 +13,7 @@ resource "aws_s3_bucket" "example" {
 }
 
 resource "aws_s3_bucket_policy" "example" {
-  bucket = aws_s3_bucket.example.id
+  bucket = aws_s3_bucket.bucket.id
 
   policy = jsonencode({
     Version = "2012-10-17"
@@ -23,8 +23,8 @@ resource "aws_s3_bucket_policy" "example" {
         Principal = "*"
         Action = "s3:*"
         Resource = [
-          "${aws_s3_bucket.example.arn}",
-          "${aws_s3_bucket.example.arn}/*"
+          "${aws_s3_bucket.bucket.arn}",
+          "${aws_s3_bucket.bucket.arn}/*"
         ]
         Condition = {
           Bool = {
