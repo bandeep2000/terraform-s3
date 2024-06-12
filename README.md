@@ -16,7 +16,7 @@ Before you begin, ensure you have the following:
    Ensure that your credentials have appropriate permissions for:
    * Creating s3 bucket
    * Accessing the S3 bucket
-   * Aceess for Dynamodb tables for terraform lock
+   * Access for Dynamodb tables for terraform lock
 4.    **Update backend.tf with S3 Bucket and Dynamodb**:  Update backend.tf with your S3 bucket and dynamodb details.
     Note: This project assumes you have  created S3 bucket and dynamo db table
 
